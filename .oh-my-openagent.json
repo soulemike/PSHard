@@ -1,0 +1,29 @@
+{
+  "lsp": {
+    "powershell": {
+      "command": [
+        "pwsh",
+        "-NoLogo",
+        "-NoProfile",
+        "-Command",
+        "/home/azureuser/.local/share/PowerShellEditorServices/PowerShellEditorServices/Start-EditorServices.ps1",
+        "-HostName",
+        "oh-my-openagent",
+        "-HostProfileId",
+        "0",
+        "-HostVersion",
+        "1.0.0",
+        "-BundledModulesPath",
+        "/home/azureuser/.local/share/PowerShellEditorServices",
+        "-LogPath",
+        "/tmp/powershell-es.log",
+        "-LogLevel",
+        "Normal",
+        "-SessionDetailsPath",
+        "/tmp/powershell-es.session",
+        "-Stdio"
+      ],
+      "extensions": [".ps1", ".psm1", ".psd1"]
+    }
+  }
+}

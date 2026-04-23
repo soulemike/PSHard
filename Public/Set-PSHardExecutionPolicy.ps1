@@ -12,6 +12,7 @@ function Set-PSHardExecutionPolicy {
 
     $service = [PolicyRegistryService]::new()
 
-    $service.EnsureRegistryPath($Scope, $PSCmdlet)
-    $service.SetExecutionPolicy($Scope, $Policy, $EnableScripts, $PSCmdlet)
+    if ($PSCmdlet.ShouldProcess("Execution Policy ($Scope)", "Set to $Policy with EnableScripts=$EnableScripts")) {
+        $service.SetExecutionPolicy($Scope, $Policy, $EnableScripts, $PSCmdlet)
+    }
 }
