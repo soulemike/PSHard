@@ -5,12 +5,12 @@ class SystemHardeningService {
             $name = "PSHard-Block-Inbound-$port"
 
             if (-not (Get-NetFirewallRule -DisplayName $name -ErrorAction SilentlyContinue)) {
-                New-NetFirewallRule \
-                    -DisplayName $name \
-                    -Direction Inbound \
-                    -Protocol TCP \
-                    -LocalPort $port \
-                    -Action Block \
+                New-NetFirewallRule `
+                    -DisplayName $name `
+                    -Direction Inbound `
+                    -Protocol TCP `
+                    -LocalPort $port `
+                    -Action Block `
                     -Group $RuleGroup | Out-Null
             }
         }

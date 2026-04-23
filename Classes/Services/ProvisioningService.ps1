@@ -22,10 +22,10 @@ class ProvisioningService {
 
         $psscPath = Join-Path $ConfigurationPath "$Name.pssc"
 
-        New-PSSessionConfigurationFile \
-            -SessionType RestrictedRemoteServer \
-            -Path $psscPath \
-            -VisibleCmdlets $VisibleCmdlets \
+        New-PSSessionConfigurationFile `
+            -SessionType RestrictedRemoteServer `
+            -Path $psscPath `
+            -VisibleCmdlets $VisibleCmdlets `
             -Force
 
         Register-PSSessionConfiguration -Path $psscPath -Name $Name -Force
@@ -67,10 +67,10 @@ class ProvisioningService {
         }
 
         $policy = @"
-<?xml version=\"1.0\" encoding=\"utf-8\"?>
-<SiPolicy PolicyType=\"EXE\">
+<?xml version="1.0" encoding="utf-8"?>
+<SiPolicy PolicyType="EXE">
     <Rules>
-        <Rule EnforcementMode=\"$enforcementValue\" />
+        <Rule EnforcementMode="$enforcementValue" />
     </Rules>
     <FileRules>
 $(($fileRules -join "`n"))
